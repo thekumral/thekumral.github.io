@@ -1,0 +1,451 @@
+// Bootstrap SCSS import
+@import '../../node_modules/bootstrap/scss/bootstrap';
+//Colors
+$navbar-Navlink-Color: #f8ede3;
+$navbar-Hover-Color: #b6c7aa;
+$navbar-Background-Color: #1b1a55;
+
+//Layout
+$layout-Background-Color: #070f2b;
+//Left-Side
+
+//Right-Side
+
+//TerminalColours
+$terminal-Background-Color: #1b1a55;
+$terminal-Border-Size: 10px;
+$terminal-Header-Color: #535c91;
+$terminal-Button-Size: 15px;
+$terminalClose: #e74c3c;
+$terminal-Close-Border-Color: #c0392b;
+$terminalMinimise: #f39c12;
+$terminal-Minimise-Border-Color: #e67e22;
+$terminalExpand: #2ecc71;
+$terminal-Expand-Border-Color: #27ae60;
+$terminalText: #5ebc64;
+$terminal-Text-info-Color: #dddddd;
+$terminalBar: #222;
+$terminal-Bar-Accents-Color: #00bfff;
+$terminal-Field-Color: #37b47e;
+$terminal-Value-Color: #2796bf;
+$terminal-Const-Color: #a12568;
+$terminal-Coder-Color: #fec260;
+$terminal-tmux-screen-Name-Background-Color: #443c68;
+$terminal-Battery-Background-Color: #18122b;
+$terminal-Bar-Backgorund-Color: #393053;
+$termianl-Battery-Font-Color: #f6b17a;
+$terminal-Screen-Name-Font-Color: #c8acd6;
+$termianl-Bar-Font-Color: #c8acd6;
+$primary-300: #3498db;
+
+//Const
+$tablet: 991.98px;
+$mobile: 575.98px;
+
+$response-colors: (
+  'hello': #00ff00,
+  // Yeşil
+  'commands': #ffff00,
+  // Sarı
+  'echo': #ff00ff,
+  // Mor
+  'kill': #ff0000,
+  // Kırmızı
+  'facts': #00ffff,
+  // Cyan
+  'ls': #ff6600,
+  // Turuncu
+  'cat': #ffcc00,
+  // Açık Sarı
+  'git': #cc00cc,
+  // Koyu Mor
+  'ssh': #00ccff,
+  // Açık Mavi
+  'hacker': #ff3300,
+  // Turuncu Kırmızı
+  'info': #339900,
+  // Yeşil
+  'contact': #6600ff,
+  //Mor
+  '44': #4444ad,
+
+  'error': #ff3333
+    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+);
+body {
+  background-color: $layout-Background-Color;
+}
+
+// Custom Navbar Styles
+.navbar-custom {
+  background-color: $navbar-Background-Color;
+  padding: 1.3rem 2rem;
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $navbar-Navlink-Color;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $navbar-Hover-Color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-Navlink-Color;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $navbar-Hover-Color;
+      }
+    }
+  }
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+
+  .left-panel {
+    width: 35%;
+    padding: 20px;
+  }
+
+  .right-panel {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Terminal Styles
+    #terminal {
+      background: $terminal-Background-Color;
+      border-radius: $terminal-Border-Size;
+      box-shadow: 0 0.5em 1em 1em rgba(0, 0, 0, 0.5);
+      font-family: monaco, Consolas, Lucida Console, monospace;
+      width: 85%;
+      height: 30em;
+      position: relative;
+      overflow: hidden;
+
+      transform: scale(1);
+      transform-origin: top left;
+
+      .terminal-header {
+        background: $terminal-Header-Color;
+        border-radius: $terminal-Border-Size $terminal-Border-Size 0 0;
+
+        .terminal-header-buttons {
+          display: flex;
+          flex-direction: row;
+          padding: 0.5em 1em;
+
+          .terminal-button {
+            width: $terminal-Button-Size;
+            height: $terminal-Button-Size;
+            border-radius: 1em;
+            margin-right: 0.5em;
+
+            &.close {
+              background: $terminalClose;
+              border: 1px solid $terminal-Close-Border-Color;
+              position: relative;
+
+              &:after {
+                content: '';
+                width: $terminal-Button-Size / 3;
+                height: $terminal-Button-Size / 3;
+                position: absolute;
+                top: $terminal-Button-Size / 4;
+                left: $terminal-Button-Size / 4;
+                background: $terminal-Close-Border-Color;
+                border-radius: 1em;
+              }
+            }
+
+            &.minimise {
+              background: $terminalMinimise;
+              border: 1px solid $terminal-Minimise-Border-Color;
+            }
+
+            &.expand {
+              background: $terminalExpand;
+              border: 1px solid $terminal-Expand-Border-Color;
+            }
+          }
+        }
+      }
+
+      .terminal-body {
+        padding: 1em;
+        padding-bottom: 3em; // Default padding for desktop
+        color: $terminalText;
+        height: calc(100% - 3.5em); // Adjust for header and tmux bar height
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+
+        .terminal-info {
+          color: $terminal-Text-info-Color;
+          font-size: large;
+          overflow: hidden;
+        }
+
+        .has-text-weight-bold {
+          color: lighten($terminalText, 10%);
+        }
+
+        .text-info {
+          color: $terminal-Text-info-Color;
+        }
+
+        a {
+          color: $primary-300;
+          text-decoration: underline;
+        }
+      }
+
+      .coder {
+        color: $terminal-Coder-Color;
+      }
+      .va-lue {
+        color: $terminal-Value-Color;
+        word-wrap: break-word; // Uzun kelimelerin sarılması için
+        white-space: pre-wrap; // Satır sonlarında kelimenin bölünmesini sağlar
+      }
+      .const {
+        color: $terminal-Const-Color;
+      }
+
+      .field {
+        color: $terminal-Field-Color;
+      }
+
+      .terminal-tmux-bar {
+        background: $terminalBar;
+        border-radius: 0 0 $terminal-Border-Size $terminal-Border-Size;
+        display: flex;
+        flex-direction: row;
+        color: red;
+        font-size: 0.8em;
+        position: relative;
+        margin-bottom: 10em;
+
+        .screen,
+        .name {
+          background: $terminal-tmux-screen-Name-Background-Color;
+          color: $terminal-Screen-Name-Font-Color;
+        }
+
+        .battery {
+          background: $terminal-Battery-Background-Color;
+          color: $termianl-Battery-Font-Color;
+        }
+
+        .bar {
+          flex-grow: 10;
+          background-color: $terminal-Bar-Backgorund-Color;
+          color: $termianl-Bar-Font-Color;
+        }
+
+        .screen,
+        .name,
+        .battery,
+        .bar {
+          padding: 0.3em;
+        }
+
+        .screen {
+          border-bottom-left-radius: $terminal-Border-Size;
+          padding-left: 1em;
+        }
+
+        .name {
+          border-bottom-right-radius: $terminal-Border-Size;
+          padding-right: 1em;
+        }
+      }
+
+      .command-line {
+        padding-bottom: 1em;
+      }
+
+      .terminal-control {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        color: $terminalText;
+        z-index: 10;
+
+        .terminal-input {
+          color: $terminal-Bar-Accents-Color;
+
+          .field {
+            .control.has-icons-left {
+              position: relative;
+
+              .icon.is-left {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                padding-bottom: 1em;
+                transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                -moz-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -o-transform: translateY(-50%);
+              }
+
+              .input {
+                background: $terminal-Background-Color;
+                border: none;
+                padding: 0 0 1em 3em;
+                font-family: monaco, Consolas, Lucida Console, monospace;
+                color: $terminalText;
+                caret-color: transparent;
+                width: 95%;
+
+                &:hover,
+                &:active,
+                &:focus {
+                  outline: none;
+                  box-shadow: none;
+                }
+
+                &:focus {
+                  & + .cursor {
+                    display: inline-block;
+                  }
+                }
+              }
+
+              .cursor {
+                display: none;
+                background: $terminalText;
+                width: 0.5em;
+                height: 1.2em;
+                animation: flash 1s infinite;
+                position: absolute;
+                top: 0.25em;
+                left: 1em;
+                -webkit-animation: flash 1s infinite;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Mobile responsiveness
+@media (max-width: $tablet) {
+  // Navbar custom background color for mobile
+  .navbar-custom {
+    background-color: $navbar-Background-Color;
+  }
+
+  // Layout adjustments for tablet view
+  .layout {
+    flex-direction: column;
+    height: 100vh;
+
+    .left-panel {
+      width: 100%;
+      height: 60%;
+      background-color: $layout-Background-Color;
+      padding: 20px;
+    }
+
+    .right-panel {
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      background-color: $layout-Background-Color;
+
+      // Terminal styling for tablet
+      #terminal {
+        width: 100%;
+        height: calc(100% - 3.5em);
+        background: lighten($terminal-Background-Color, 2%);
+        border-radius: $terminal-Border-Size;
+        box-shadow: 0 0.5em 1em 1em rgba(0, 0, 0, 0.5);
+        font-family: monaco, Consolas, Lucida Console, monospace;
+        position: relative;
+
+        .terminal-header {
+          font-size: 0.9rem;
+        }
+
+        .terminal-body .terminal-info {
+          padding-bottom: 2em;
+          font-size: 0.9rem;
+        }
+
+        .terminal-tmux-bar {
+          font-size: 0.7rem;
+        }
+
+        .terminal-control {
+          .terminal-input {
+            .input {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  // Layout adjustments for mobile view
+  .layout {
+    .right-panel {
+      // Terminal styling for mobile
+      #terminal {
+        .terminal-body {
+          padding-bottom: 1.5em; // Mobil için padding bottom ayarı
+          font-size: 0.8rem;
+        }
+
+        .terminal-control {
+          .terminal-input {
+            .input {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Dinamik renkleri CSS sınıflarına uygulama
+@each $command, $color in $response-colors {
+  .response-#{$command} {
+    color: $color;
+  }
+}
+
+// Blinking Cursor Animation
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  59% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

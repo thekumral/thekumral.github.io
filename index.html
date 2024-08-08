@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>thekumral.github.io</title>
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <a class="navbar-brand" href="#">Kumral</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Skills</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+      <div class="layout">
+        <div class="left-panel">
+          <h2>Hoşgeldiniz Felan dilan</h2>
+        </div>
+        <div class="right-panel">
+          <div id="terminal">
+            <div class="terminal-header">
+              <div class="terminal-header-buttons">
+                <div class="terminal-button close"></div>
+                <div class="terminal-button minimise"></div>
+                <div class="terminal-button expand"></div>
+              </div>
+            </div>
+            <div class="terminal-body">
+              <pre class="terminal-info">
+        <span class="const">const <span class="coder">coder</span></span> = {
+        <span class="field">name:<span class="value">'Ömer Faruk KUMRAL'</span> </span>,
+        <span class="field">location: <span class="value">'Trabzon/Türkiye'</span></span>,
+        <span class="field">hardWorker:<span class="value">true</span> </span>,
+        <span class="field">quickLearner: <span class="value">true</span></span>,
+        <span class="field">problemSolver: <span class="value">true</span></span>,
+        <span class="field">skills: <span class="value">['.Net', 'C#', 'OOP', 'React-Native', 'Swift', 'SQL']</span>,
+                };</span>
+              </pre>
+              <div>
+                <p class="text-info">
+                  Type "commands" into the terminal window and hit enter to see
+                  all commands
+                </p>
+              </div>
+              <br />
+              <div class="terminal-control">
+                <div class="terminal-input-wrapper">
+                  <form class="terminal-input">
+                    <div class="field">
+                      <div class="control has-icons-left">
+                        <span class="icon is-left"
+                          >❯ <label class="label">~</label></span
+                        >
+                        <span class="cursor">|</span>
+                        <input
+                          class="input"
+                          id="commandInput"
+                          name=""
+                          autocorrect="off"
+                          autocapitalize="none"
+                          autocomplete="off"
+                          autofocus=""
+                          placeholder="Enter Command"
+                        />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="terminal-tmux-bar">
+              <div class="screen">0</div>
+              <div class="bar">zsh</div>
+              <div class="battery">44%</div>
+              <div class="name">thekumral's Laptop</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="border-top footer text-muted">
+      <div class="container">
+        &copy; 2024 - thekumral.github.io -
+        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+      </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/terminal.js"></script>
+  </body>
+</html>
