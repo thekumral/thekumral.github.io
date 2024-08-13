@@ -70,7 +70,7 @@ $response-colors: (
   '44': #4444ad,
 
   'error': #ff3333
-    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 body {
   background-color: $layout-Background-Color;
@@ -197,6 +197,7 @@ body {
           overflow-wrap: break-word;
           word-wrap: break-word;
           white-space: pre-wrap;
+          overflow: hidden;
         }
 
         .has-text-weight-bold {
@@ -237,8 +238,6 @@ body {
         color: red;
         font-size: 0.8em;
         position: relative;
-        margin-bottom: 10em;
-
         .screen,
         .name {
           background: $terminal-tmux-screen-Name-Background-Color;
@@ -409,10 +408,9 @@ body {
   // Layout adjustments for mobile view
   .layout {
     .right-panel {
-      // Terminal styling for mobile
       #terminal {
         .terminal-body {
-          padding-bottom: 1.5em; // Mobil için padding bottom ayarı
+          padding-bottom: 1.5em;
           font-size: 0.8rem;
         }
 

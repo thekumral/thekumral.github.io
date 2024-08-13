@@ -11952,6 +11952,7 @@ body {
   overflow-wrap: break-word;
   word-wrap: break-word;
   white-space: pre-wrap;
+  overflow: hidden;
 }
 .layout .right-panel #terminal .terminal-body .has-text-weight-bold {
   color: #82cb87;
@@ -11985,7 +11986,6 @@ body {
   color: red;
   font-size: 0.8em;
   position: relative;
-  margin-bottom: 10em;
 }
 .layout .right-panel #terminal .terminal-tmux-bar .screen,
 .layout .right-panel #terminal .terminal-tmux-bar .name {

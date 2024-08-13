@@ -43,21 +43,18 @@ document.addEventListener('DOMContentLoaded', function () {
           break;
         case 'clear':
           const initialMessage = `
-            <div>
-              <p class="has-text-weight-bold">Merhaba Ben Ömer Faruk HG</p>
-              <br>
-              <p>Here's some facts about me:</p>
-              <ul>
-                <li class="is-rainbow-red">✅ Web Developer</li>
-                <li class="is-rainbow-orange">✅ App Developer</li>
-                <li class="is-rainbow-yellow">✅ TypeScript Expert</li>
-                <li class="is-rainbow-green">✅ Backend Specialist</li>
-                <li class="is-rainbow-blue">✅ EPOS Builder</li>
-                <li class="is-rainbow-violet">✅ Football Fanatic ⚽ (forza Biancazzurri!)</li>
-              </ul>
-              <br>
-            </div>
-            <div>
+           <pre class="terminal-info">
+
+<span class="const">Welcome To Terminal</span> 
+
+        <span class="const">const <span class="coder">coder</span></span> = {
+        <span class="field">name:<span class="value">'Ömer Faruk KUMRAL'</span> </span>,
+        <span class="field">location: <span class="value">'Trabzon/Türkiye'</span></span>,
+        <span class="field">hardWorker:<span class="value">true</span> </span>,
+        <span class="field">quickLearner: <span class="value">true</span></span>,
+        <span class="field">problemSolver: <span class="value">true</span></span>,
+        <span class="field">skills: <span class="value">['.Net','C#','OOP','React-Native','Swift','SQL']</span>};</span>
+              </pre>
               <p class="text-info">Type "commands" into the terminal window and hit enter to see all commands</p>
             </div>
             <br>
