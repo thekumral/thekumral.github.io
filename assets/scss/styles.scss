@@ -70,7 +70,7 @@ $response-colors: (
   '44': #4444ad,
 
   'error': #ff3333
-    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 body {
   background-color: $layout-Background-Color;
@@ -182,9 +182,9 @@ body {
 
       .terminal-body {
         padding: 1em;
-        padding-bottom: 3em; // Default padding for desktop
+        padding-bottom: 3em;
         color: $terminalText;
-        height: calc(100% - 3.5em); // Adjust for header and tmux bar height
+        height: calc(100% - 3.5em);
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -194,7 +194,9 @@ body {
         .terminal-info {
           color: $terminal-Text-info-Color;
           font-size: large;
-          overflow: hidden;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          white-space: pre-wrap;
         }
 
         .has-text-weight-bold {

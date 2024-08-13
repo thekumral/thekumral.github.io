@@ -11949,7 +11949,9 @@ body {
 .layout .right-panel #terminal .terminal-body .terminal-info {
   color: #dddddd;
   font-size: large;
-  overflow: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 .layout .right-panel #terminal .terminal-body .has-text-weight-bold {
   color: #82cb87;
