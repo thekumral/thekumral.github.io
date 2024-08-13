@@ -71,7 +71,7 @@ $response-colors: (
   '44': #4444ad,
 
   'error': #ff3333
-    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 body {
   background-color: $layout-Background-Color;
@@ -109,35 +109,34 @@ body {
 
 .layout {
   display: flex;
-  height: 100vh;
-
+  padding-top: 5%;
   .left-panel {
     width: 35%;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-  .animation_text h1 {
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    color: $welcome-text;
-    font-size: 30px;
-    font-weight: 500;
-  }
-  .animation_text h1 span {
-    color: $animation-text;
-  }
-  @media (max-width: 768px) {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
     .animation_text h1 {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      color: $welcome-text;
       font-size: 30px;
+      font-weight: 500;
     }
-  }
-  .cursor {
-    font-weight: bold;
-    animation: blink 0.7s steps(1) infinite;
-    color: inherit;
+    .animation_text h1 span {
+      color: $animation-text;
+    }
+    @media (max-width: 768px) {
+      .animation_text h1 {
+        font-size: 30px;
+      }
+    }
+    .cursor {
+      font-weight: bold;
+      animation: blink 0.7s steps(1) infinite;
+      color: inherit;
+    }
   }
 
   .right-panel {
@@ -369,6 +368,129 @@ body {
     }
   }
 }
+.about-section {
+  background-color: $layout-Background-Color;
+  padding: 50px 0;
+
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; // Better alignment between image and text
+    padding: 20px;
+    background-color: darken($layout-Background-Color, 5%);
+    border-radius: 10px;
+    gap: 20px;
+    flex-wrap: wrap; // Allow elements to wrap on smaller screens
+  }
+
+  .about-image {
+    flex: 0 1 300px; // Flexbox for responsiveness with a max width
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      border-radius: 30%;
+      filter: grayscale(100%);
+      object-fit: cover;
+      transition: filter 0.5s ease;
+      -webkit-border-radius: 30%;
+      -moz-border-radius: 30%;
+      -ms-border-radius: 30%;
+      -o-border-radius: 30%;
+    }
+
+    img:hover {
+      filter: grayscale(0%);
+    }
+  }
+
+  .about-text {
+    flex: 1; // Use available space flexibly
+    color: $welcome-text;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; // Add padding to prevent squeezing
+    max-width: 500px; // Max width for text container
+
+    h2 {
+      font-size: 2rem;
+      color: $animation-text;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Skills Section Styling
+.skills-section {
+  padding: 50px 0;
+  text-align: center;
+
+  h2 {
+    color: $animation-text;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .skills-container {
+    position: relative;
+    width: 300px; /* Yeterli genişlik ayarla */
+    height: 300px; /* Yeterli yükseklik ayarla */
+    margin: 0 auto;
+    perspective: 1000px; /* 3D perspektif */
+  }
+
+  .skills-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* 3D dönüşümü aktif et */
+    animation: rotateX 10s linear infinite; /* Döndürme animasyonu */
+  }
+
+  .skill {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    border-radius: 50%;
+    background-color: lighten($terminal-Background-Color, 10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center center; /* Dönme merkezi */
+  }
+
+  .skill:nth-child(1) {
+    transform: rotateX(0deg) translateZ(150px); /* İlk eleman */
+  }
+  .skill:nth-child(2) {
+    transform: rotateX(60deg) translateZ(150px); /* İkinci eleman */
+  }
+  .skill:nth-child(3) {
+    transform: rotateX(120deg) translateZ(150px); /* Üçüncü eleman */
+  }
+  /* Daha fazla eleman eklemek için yukarıdaki kuralları devam ettir */
+}
+
+@keyframes rotateX {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
 // Mobile responsiveness
 @media (max-width: $tablet) {
   // Navbar custom background color for mobile
@@ -425,6 +547,14 @@ body {
       }
     }
   }
+  .about-section {
+    .about-image {
+      max-width: 100px;
+    }
+    .about-text {
+      max-width: 100%; // Ensure text uses full width
+    }
+  }
 }
 
 @media (max-width: $mobile) {
@@ -445,6 +575,19 @@ body {
           }
         }
       }
+    }
+  }
+  .about-section {
+    .about-container {
+      flex-direction: column; // Stack elements vertically on mobile
+    }
+
+    .about-image {
+      max-width: 150px; // Smaller size on mobile
+    }
+
+    .about-text {
+      padding: 10px; // Adjust padding for smaller screens
     }
   }
 }
