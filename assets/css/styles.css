@@ -11874,10 +11874,34 @@ body {
 .layout {
   display: flex;
   height: 100vh;
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 }
 .layout .left-panel {
   width: 35%;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layout .animation_text h1, .layout .animation_text .h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #f7f7f8;
+  font-size: 30px;
+  font-weight: 500;
+}
+.layout .animation_text h1 span, .layout .animation_text .h1 span {
+  color: #a02334;
+}
+@media (max-width: 768px) {
+  .layout .animation_text h1, .layout .animation_text .h1 {
+    font-size: 30px;
+  }
+}
+.layout .cursor {
+  font-weight: bold;
+  animation: blink 0.7s steps(1) infinite;
+  color: inherit;
 }
 .layout .right-panel {
   width: 65%;
@@ -12080,14 +12104,12 @@ body {
   }
   .layout .left-panel {
     width: 100%;
-    height: 60%;
     background-color: #070f2b;
     padding: 20px;
   }
   .layout .right-panel {
     padding: 20px;
     width: 100%;
-    height: 100%;
     background-color: #070f2b;
   }
   .layout .right-panel #terminal {

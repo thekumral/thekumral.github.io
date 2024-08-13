@@ -8,7 +8,8 @@ $navbar-Background-Color: #1b1a55;
 //Layout
 $layout-Background-Color: #070f2b;
 //Left-Side
-
+$welcome-text: #f7f7f8;
+$animation-text: #a02334;
 //Right-Side
 
 //TerminalColours
@@ -70,7 +71,7 @@ $response-colors: (
   '44': #4444ad,
 
   'error': #ff3333
-    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 body {
   background-color: $layout-Background-Color;
@@ -113,6 +114,30 @@ body {
   .left-panel {
     width: 35%;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  .animation_text h1 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: $welcome-text;
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .animation_text h1 span {
+    color: $animation-text;
+  }
+  @media (max-width: 768px) {
+    .animation_text h1 {
+      font-size: 30px;
+    }
+  }
+  .cursor {
+    font-weight: bold;
+    animation: blink 0.7s steps(1) infinite;
+    color: inherit;
   }
 
   .right-panel {
@@ -358,7 +383,6 @@ body {
 
     .left-panel {
       width: 100%;
-      height: 60%;
       background-color: $layout-Background-Color;
       padding: 20px;
     }
@@ -366,7 +390,6 @@ body {
     .right-panel {
       padding: 20px;
       width: 100%;
-      height: 100%;
       background-color: $layout-Background-Color;
 
       // Terminal styling for tablet
