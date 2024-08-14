@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dikey ve yatay düzeni varsayılana döndür
     modalBody.style.flexDirection = 'row';
     modalImage.style.maxWidth = '40%';
+    modalImage.style.height = 'auto';
     modalText.style.width = '60%';
     modalImage.style.order = '0';
     modalText.style.order = '0';
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (aspectRatio > 1) {
       // Yatay resim
-      modalBody.style.flexDirection = 'column'; // Metin ve resmi dikey olarak yerleştir
+      modalBody.style.flexDirection = 'column';
       modalImage.style.maxWidth = '100%';
       modalImage.style.order = '1';
       modalText.style.order = '0';
