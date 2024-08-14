@@ -12196,22 +12196,332 @@ body {
   animation: rotateY 5s linear infinite; /* Sadece ikonun dönmesi */
 }
 
-@media (max-width: 991.98px) {
-  .skills-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.projects-section {
+  padding: 50px 0;
+  background-color: #0b1741;
+}
+.projects-section h2, .projects-section .h2 {
+  color: #a02334;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.projects-section .projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.projects-section .project-card {
+  background-color: #1b1a55;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 350px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+.projects-section .project-card:hover {
+  transform: scale(1.05);
+}
+.projects-section .project-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.projects-section .project-card .card-content {
+  padding: 20px;
+  color: #5ebc64;
+}
+.projects-section .project-card .card-content h3, .projects-section .project-card .card-content .h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #3498db;
+}
+.projects-section .project-card .card-content p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+.projects-section .project-card .card-content a.github-link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+.projects-section .project-card .card-content a.github-link:hover {
+  color: #b6c7aa;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 10px; /* Adjusted padding */
+  /* Responsive Design */
+}
+.modal .modal-content {
+  background-color: #2e2e2e;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  height: 80%; /* Modal height set to 80% */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal .modal-body {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 100%;
+  align-items: flex-start;
+}
+.modal .modal-image {
+  flex: 0 0 40%; /* Image takes 40% of the width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 40%; /* Image max-width set to 40% */
+  height: 100%; /* Ensure the image section takes full height */
+}
+.modal .slider {
+  width: 100%;
+  position: relative;
+  max-height: 100%; /* Adjusted slider height to fill available space */
+  overflow: hidden;
+}
+.modal .slider img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: none;
+  border-radius: 10px;
+}
+.modal .slider img.active {
+  display: block;
+}
+.modal .slider-controls {
+  text-align: center;
+  margin-top: 5px; /* Reduced space between images and arrows */
+}
+.modal .prev,
+.modal .next {
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px; /* Reduced padding */
+  color: white;
+  font-weight: bold;
+  font-size: 16px; /* Reduced font size */
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  text-decoration: none;
+}
+.modal .prev:hover,
+.modal .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal .modal-text {
+  flex: 0 0 60%; /* Text takes 60% of the width */
+  height: 100%; /* Ensure the text section takes full height */
+  overflow-y: auto; /* Add vertical scroll if content overflows */
+}
+.modal .modal-text h4, .modal .modal-text .h4 {
+  color: #00c896;
+  margin-top: 0;
+}
+.modal .modal-text p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.modal .github-link {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.modal .github-link:hover {
+  color: #0056b3;
+}
+.modal .close {
+  color: #cccccc;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal .close:hover,
+.modal .close:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .modal .modal-body {
+    flex-direction: column;
   }
-  .skill {
-    width: 70px;
-    height: 70px;
-    margin: 10px;
+  .modal .modal-image {
+    max-width: 100%; /* Full width for mobile */
+    flex: none; /* Remove flex-grow */
+    height: 40%; /* Adjust height for mobile */
   }
-  .skill img {
-    width: 40px;
-    height: 40px;
+  .modal .modal-text {
+    max-width: 100%; /* Full width for mobile */
+    flex: none; /* Remove flex-grow */
+    height: 60%; /* Adjust height for mobile */
+  }
+  .modal .slider {
+    max-height: 100%; /* Adjust slider height for mobile */
+  }
+  .modal .prev,
+  .modal .next {
+    font-size: 14px; /* Smaller font size for mobile */
+    padding: 4px; /* Smaller padding for mobile */
   }
 }
+@media (max-width: 480px) {
+  .modal .slider {
+    max-height: 80%; /* Adjust slider height for smaller devices */
+  }
+  .modal .prev,
+  .modal .next {
+    font-size: 12px; /* Further reduced font size */
+    padding: 3px; /* Further reduced padding */
+  }
+}
+
+/* Experience Section */
+.experience-section {
+  padding: 2rem;
+  background-color: #fff;
+}
+.experience-section .experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.experience-section .experience-item {
+  display: flex;
+  gap: 1rem;
+}
+.experience-section .experience-left {
+  position: relative;
+  width: 30%;
+}
+.experience-section .line {
+  border-left: 2px solid #333;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.experience-section .position {
+  padding-left: 1rem;
+}
+.experience-section .experience-right {
+  width: 70%;
+  padding-left: 1rem;
+}
+
+.education-section {
+  padding: 50px 0;
+}
+.education-section h2, .education-section .h2 {
+  text-align: center;
+  color: #a02334;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.education-section .education-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.education-section .education-container .education-item {
+  background-color: #1b1a55;
+  color: #5ebc64;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.education-section .education-container .education-item .date {
+  font-size: 1rem;
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+.education-section .education-container .education-item .institution {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.education-section .education-container .education-item .degree {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.education-section .education-container .education-item .gpa {
+  font-size: 1rem;
+}
+
+.programming-languages-section {
+  padding: 50px 0;
+}
+.programming-languages-section h2, .programming-languages-section .h2 {
+  text-align: center;
+  color: #a02334;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.programming-languages-section ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+.programming-languages-section ul li {
+  font-size: 1rem;
+  color: #5ebc64;
+  margin-bottom: 10px;
+}
+
+.foreign-language-section {
+  padding: 50px 0;
+  text-align: center;
+}
+.foreign-language-section h2, .foreign-language-section .h2 {
+  color: #a02334;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.foreign-language-section p {
+  font-size: 1rem;
+  color: #5ebc64;
+}
+
+.footer {
+  background-color: #1b1a55;
+  color: #f8ede3;
+  padding: 20px 0;
+  text-align: center;
+}
+.footer a {
+  color: #f8ede3;
+}
+.footer a:hover {
+  color: #b6c7aa;
+}
+
 @media (max-width: 991.98px) {
   .skills-section .skills-container {
     flex-direction: row;
@@ -12265,6 +12575,26 @@ body {
   .about-section .about-text {
     max-width: 100%;
   }
+  .projects-section,
+  .experience-section {
+    padding: 30px 0;
+  }
+  .projects-section h2, .projects-section .h2,
+  .experience-section h2,
+  .experience-section .h2 {
+    font-size: 1.8rem;
+  }
+  .projects-section .modal-content,
+  .experience-section .modal-content {
+    width: 90%;
+  }
+  .experience-container .experience-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .experience-container .experience-item .date-company {
+    margin-bottom: 10px;
+  }
 }
 @media (max-width: 575.98px) {
   .skills-section .skills-container {
@@ -12296,6 +12626,27 @@ body {
   }
   .about-section .about-text {
     padding: 10px;
+  }
+  .projects-section,
+  .experience-section {
+    padding: 20px 0;
+  }
+  .projects-section h2, .projects-section .h2,
+  .experience-section h2,
+  .experience-section .h2 {
+    font-size: 1.5rem;
+  }
+  .projects-section .project-card {
+    margin-bottom: 15px;
+  }
+  .experience-container .experience-item .date-company {
+    font-size: 0.9rem;
+  }
+  .experience-container .experience-item .position {
+    font-size: 0.9rem;
+  }
+  .experience-container .experience-item .description {
+    font-size: 0.9rem;
   }
 }
 .response-hello {

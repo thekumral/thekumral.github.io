@@ -11,7 +11,8 @@ $layout-Background-Color: #070f2b;
 $welcome-text: #f7f7f8;
 $animation-text: #a02334;
 //Right-Side
-
+$coder-Color: #e67e22;
+$skills-icon-Border-Color: #1abc9c;
 //TerminalColours
 $terminal-Background-Color: #1b1a55;
 $terminal-Border-Size: 10px;
@@ -71,7 +72,7 @@ $response-colors: (
   '44': #4444ad,
 
   'error': #ff3333
-    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 body {
   background-color: $layout-Background-Color;
@@ -481,23 +482,387 @@ body {
     }
   }
 }
+// Projects Section
+.projects-section {
+  padding: 50px 0;
+  background-color: lighten($layout-Background-Color, 5%);
 
-@media (max-width: $tablet) {
-  .skills-container {
-    flex-direction: row;
+  h2 {
+    color: $animation-text;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .projects-container {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    gap: 20px;
+    justify-content: center;
   }
 
-  .skill {
-    width: 70px;
-    height: 70px;
-    margin: 10px;
+  .project-card {
+    background-color: $terminal-Background-Color;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      color: $terminalText;
+
+      h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: $primary-300;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 1rem;
+      }
+
+      a.github-link {
+        color: $primary-300;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $navbar-Hover-Color;
+        }
+      }
+    }
+  }
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 10px; /* Adjusted padding */
+
+  .modal-content {
+    background-color: #2e2e2e;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    height: 80%; /* Modal height set to 80% */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .skill img {
-    width: 40px;
-    height: 40px;
+  .modal-body {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 100%;
+    align-items: flex-start;
+  }
+
+  .modal-image {
+    flex: 0 0 40%; /* Image takes 40% of the width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 40%; /* Image max-width set to 40% */
+    height: 100%; /* Ensure the image section takes full height */
+  }
+
+  .slider {
+    width: 100%;
+    position: relative;
+    max-height: 100%; /* Adjusted slider height to fill available space */
+    overflow: hidden;
+  }
+
+  .slider img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: none;
+    border-radius: 10px;
+  }
+
+  .slider img.active {
+    display: block;
+  }
+
+  .slider-controls {
+    text-align: center;
+    margin-top: 5px; /* Reduced space between images and arrows */
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px; /* Reduced padding */
+    color: white;
+    font-weight: bold;
+    font-size: 16px; /* Reduced font size */
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal-text {
+    flex: 0 0 60%; /* Text takes 60% of the width */
+    height: 100%; /* Ensure the text section takes full height */
+    overflow-y: auto; /* Add vertical scroll if content overflows */
+  }
+
+  .modal-text h4 {
+    color: #00c896;
+    margin-top: 0;
+  }
+
+  .modal-text p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .github-link {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .github-link:hover {
+    color: #0056b3;
+  }
+
+  .close {
+    color: #cccccc;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .modal-body {
+      flex-direction: column;
+    }
+
+    .modal-image {
+      max-width: 100%; /* Full width for mobile */
+      flex: none; /* Remove flex-grow */
+      height: 40%; /* Adjust height for mobile */
+    }
+
+    .modal-text {
+      max-width: 100%; /* Full width for mobile */
+      flex: none; /* Remove flex-grow */
+      height: 60%; /* Adjust height for mobile */
+    }
+
+    .slider {
+      max-height: 100%; /* Adjust slider height for mobile */
+    }
+
+    .prev,
+    .next {
+      font-size: 14px; /* Smaller font size for mobile */
+      padding: 4px; /* Smaller padding for mobile */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .slider {
+      max-height: 80%; /* Adjust slider height for smaller devices */
+    }
+
+    .prev,
+    .next {
+      font-size: 12px; /* Further reduced font size */
+      padding: 3px; /* Further reduced padding */
+    }
+  }
+}
+
+/* Experience Section */
+.experience-section {
+  padding: 2rem;
+  background-color: #fff;
+
+  .experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .experience-item {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .experience-left {
+    position: relative;
+    width: 30%;
+  }
+
+  .line {
+    border-left: 2px solid #333;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .position {
+    padding-left: 1rem;
+  }
+
+  .experience-right {
+    width: 70%;
+    padding-left: 1rem;
+  }
+}
+
+// Education Section
+.education-section {
+  padding: 50px 0;
+
+  h2 {
+    text-align: center;
+    color: $animation-text;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .education-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+
+    .education-item {
+      background-color: $terminal-Background-Color;
+      color: $terminalText;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+
+      .date {
+        font-size: 1rem;
+        color: $coder-Color;
+        margin-bottom: 10px;
+      }
+
+      .institution {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .degree {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .gpa {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Programming Languages Section
+.programming-languages-section {
+  padding: 50px 0;
+
+  h2 {
+    text-align: center;
+    color: $animation-text;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+
+    li {
+      font-size: 1rem;
+      color: $terminalText;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// Foreign Language Section
+.foreign-language-section {
+  padding: 50px 0;
+  text-align: center;
+
+  h2 {
+    color: $animation-text;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: $terminalText;
+  }
+}
+
+// Footer
+.footer {
+  background-color: $navbar-Background-Color;
+  color: $navbar-Navlink-Color;
+  padding: 20px 0;
+  text-align: center;
+
+  a {
+    color: $navbar-Navlink-Color;
+
+    &:hover {
+      color: $navbar-Hover-Color;
+    }
   }
 }
 
@@ -569,6 +934,29 @@ body {
       max-width: 100%;
     }
   }
+  .projects-section,
+  .experience-section {
+    padding: 30px 0;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .modal-content {
+      width: 90%;
+    }
+  }
+
+  .experience-container {
+    .experience-item {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .date-company {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }
 
 @media (max-width: $mobile) {
@@ -612,6 +1000,34 @@ body {
 
     .about-text {
       padding: 10px;
+    }
+  }
+  .projects-section,
+  .experience-section {
+    padding: 20px 0;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .projects-section .project-card {
+    margin-bottom: 15px;
+  }
+
+  .experience-container {
+    .experience-item {
+      .date-company {
+        font-size: 0.9rem;
+      }
+
+      .position {
+        font-size: 0.9rem;
+      }
+
+      .description {
+        font-size: 0.9rem;
+      }
     }
   }
 }
