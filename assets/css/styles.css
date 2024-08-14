@@ -12255,7 +12255,6 @@ body {
 }
 
 /* Modal Styling */
-/* Modal Styling */
 .modal {
   display: none;
   position: fixed;
@@ -12274,7 +12273,7 @@ body {
   margin: auto;
   padding: 20px;
   border-radius: 10px;
-  width: 70%;
+  width: 80%;
   max-width: 800px;
   height: 80%;
   color: #ffffff;
@@ -12288,25 +12287,25 @@ body {
   gap: 20px;
   height: 100%;
   align-items: flex-start;
-  transition: flex-direction 0.3s ease; /* Smooth transition for layout changes */
 }
 .modal .modal-image {
-  padding: 1vh;
-  flex: 0 0 40%;
+  flex: 0 0 50%; /* Resim bölmesi genişliği */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  order: 1;
+  max-height: 100%;
+  overflow: hidden; /* İçeriğin taşmasını önler */
 }
 .modal .slider {
   width: 100%;
+  position: relative;
   max-height: 100%;
   overflow: hidden;
 }
 .modal .slider img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: auto;
   object-fit: contain;
   display: none;
   border-radius: 10px;
@@ -12314,11 +12313,32 @@ body {
 .modal .slider img.active {
   display: block;
 }
+.modal .slider-controls {
+  text-align: center;
+  margin-top: 5px;
+}
+.modal .prev,
+.modal .next {
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  text-decoration: none;
+}
+.modal .prev:hover,
+.modal .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 .modal .modal-text {
-  flex: 1;
+  flex: 0 0 50%; /* Metin bölmesi genişliği */
   height: 100%;
   overflow-y: auto;
-  order: 0;
 }
 .modal .modal-text h4, .modal .modal-text .h4 {
   color: #00c896;
@@ -12351,15 +12371,24 @@ body {
 @media (max-width: 768px) {
   .modal .modal-body {
     flex-direction: column;
-    align-items: center;
   }
   .modal .modal-image {
     max-width: 100%;
-    height: auto;
+    flex: none;
+    height: auto; /* Yüksekliğe göre uyum sağlar */
   }
   .modal .modal-text {
-    width: 100%;
-    order: 1;
+    max-width: 100%;
+    flex: none;
+    height: auto;
+  }
+  .modal .slider {
+    max-height: 100%;
+  }
+  .modal .prev,
+  .modal .next {
+    font-size: 14px;
+    padding: 4px;
   }
 }
 @media (max-width: 480px) {
