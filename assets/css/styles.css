@@ -12152,7 +12152,6 @@ body {
 .skills-section {
   padding: 50px 0;
   text-align: center;
-  /* Daha fazla eleman eklemek için yukarıdaki kuralları devam ettir */
 }
 .skills-section h2, .skills-section .h2 {
   color: #a02334;
@@ -12160,68 +12159,85 @@ body {
   margin-bottom: 40px;
 }
 .skills-section .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  perspective: 1000px;
   position: relative;
-  width: 300px; /* Yeterli genişlik ayarla */
-  height: 300px; /* Yeterli yükseklik ayarla */
-  margin: 0 auto;
-  perspective: 1000px; /* 3D perspektif */
-}
-.skills-section .skills-container {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  transform-style: preserve-3d; /* 3D dönüşümü aktif et */
-  animation: rotateX 10s linear infinite; /* Döndürme animasyonu */
+  max-width: 800px;
+  margin: 0 auto;
 }
-.skills-section .skill {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  margin: 0;
-  border-radius: 50%;
+.skills-section .skills-container .skill {
+  width: 80px;
+  height: 80px;
   background-color: #27267c;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform-origin: center center; /* Dönme merkezi */
+  border: 2px solid #0f0e2e;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  z-index: 0; /* Default z-index */
 }
-.skills-section .skill:nth-child(1) {
-  transform: rotateX(0deg) translateZ(150px); /* İlk eleman */
+.skills-section .skills-container .skill:hover {
+  transform: scale(1.3); /* Kapsayıcı büyümesi */
+  z-index: 10; /* Diğer ikonların üzerinde yer alması için */
 }
-.skills-section .skill:nth-child(2) {
-  transform: rotateX(60deg) translateZ(150px); /* İkinci eleman */
+.skills-section .skills-container .skill:hover img {
+  transform: scale(1.3); /* İkonun büyümesi */
 }
-.skills-section .skill:nth-child(3) {
-  transform: rotateX(120deg) translateZ(150px); /* Üçüncü eleman */
+.skills-section .skills-container .skill img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease-in-out;
+  animation: rotateY 5s linear infinite; /* Sadece ikonun dönmesi */
 }
 
-@keyframes rotateX {
-  from {
-    transform: rotateX(0deg);
+@media (max-width: 991.98px) {
+  .skills-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
-  to {
-    transform: rotateX(360deg);
+  .skill {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+  }
+  .skill img {
+    width: 40px;
+    height: 40px;
   }
 }
 @media (max-width: 991.98px) {
-  .navbar-custom {
-    background-color: #1b1a55;
+  .skills-section .skills-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .skills-section .skill {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+  }
+  .skills-section .skill img {
+    width: 40px;
+    height: 40px;
   }
   .layout {
     flex-direction: column;
     height: 100vh;
   }
-  .layout .left-panel {
-    width: 100%;
-    background-color: #070f2b;
-    padding: 20px;
-  }
+  .layout .left-panel,
   .layout .right-panel {
-    padding: 20px;
     width: 100%;
+    padding: 20px;
     background-color: #070f2b;
   }
-  .layout .right-panel #terminal {
+  .layout #terminal {
     width: 100%;
     height: calc(100% - 3.5em);
     background: #1d1c5d;
@@ -12230,17 +12246,17 @@ body {
     font-family: monaco, Consolas, Lucida Console, monospace;
     position: relative;
   }
-  .layout .right-panel #terminal .terminal-header {
+  .layout #terminal .terminal-header {
     font-size: 0.9rem;
   }
-  .layout .right-panel #terminal .terminal-body .terminal-info {
+  .layout #terminal .terminal-body .terminal-info {
     padding-bottom: 2em;
     font-size: 0.9rem;
   }
-  .layout .right-panel #terminal .terminal-tmux-bar {
+  .layout #terminal .terminal-tmux-bar {
     font-size: 0.7rem;
   }
-  .layout .right-panel #terminal .terminal-control .terminal-input .input {
+  .layout #terminal .terminal-control .terminal-input .input {
     font-size: 0.8rem;
   }
   .about-section .about-image {
@@ -12251,6 +12267,20 @@ body {
   }
 }
 @media (max-width: 575.98px) {
+  .skills-section .skills-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Mobilde iki sütun olması için */
+  }
+  .skills-section .skill {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+  }
+  .skills-section .skill img {
+    width: 35px;
+    height: 35px;
+  }
   .layout .right-panel #terminal .terminal-body {
     padding-bottom: 1.5em;
     font-size: 0.8rem;
@@ -12336,6 +12366,14 @@ body {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes rotateY {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
   }
 }
 
