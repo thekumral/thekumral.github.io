@@ -11874,6 +11874,7 @@ body {
 .layout {
   display: flex;
   padding-top: 5%;
+  height: 70vh;
 }
 .layout .left-panel {
   width: 35%;
@@ -12194,6 +12195,49 @@ body {
   height: 50px;
   transition: transform 0.3s ease-in-out;
   animation: rotateY 5s linear infinite; /* Sadece ikonun dönmesi */
+}
+
+.education-section {
+  background-color: #070f2b;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 40vh;
+  margin: 0 auto;
+}
+.education-section .education-container {
+  background-color: #1b1a55;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.education-section .education-title {
+  color: #a02334;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.education-section .education-details {
+  text-align: center;
+  color: #f7f7f8;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.education-section .education-details .education-degree {
+  font-weight: bold;
+  color: #a02334;
+  margin-bottom: 0.5rem;
+}
+.education-section .education-details .education-university {
+  color: #5ebc64;
+  margin-bottom: 0.5rem;
+}
+.education-section .education-details .education-duration,
+.education-section .education-details .education-gpa {
+  font-size: 0.9rem;
+  color: #1abc9c;
 }
 
 .projects-section {
@@ -12535,7 +12579,7 @@ body {
   }
   .layout {
     flex-direction: column;
-    height: 100vh;
+    height: 70vh;
   }
   .layout .left-panel,
   .layout .right-panel {

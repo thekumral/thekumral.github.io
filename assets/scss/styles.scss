@@ -72,7 +72,7 @@ $response-colors: (
   '44': #4444ad,
 
   'error': #ff3333
-    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    // Koyu Kırmızı,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 body {
   background-color: $layout-Background-Color;
@@ -111,6 +111,7 @@ body {
 .layout {
   display: flex;
   padding-top: 5%;
+  height: 70vh;
   .left-panel {
     width: 35%;
     padding: 20px;
@@ -482,6 +483,55 @@ body {
     }
   }
 }
+.education-section {
+  background-color: $layout-Background-Color;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 40vh;
+  margin: 0 auto;
+
+  .education-container {
+    background-color: $terminal-Background-Color;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .education-title {
+    color: $animation-text;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .education-details {
+    text-align: center;
+    color: $welcome-text;
+    font-size: 1rem;
+    line-height: 1.6;
+
+    .education-degree {
+      font-weight: bold;
+      color: $animation-text;
+      margin-bottom: 0.5rem;
+    }
+
+    .education-university {
+      color: $terminalText;
+      margin-bottom: 0.5rem;
+    }
+
+    .education-duration,
+    .education-gpa {
+      font-size: 0.9rem;
+      color: $skills-icon-Border-Color;
+    }
+  }
+}
+
 // Projects Section
 .projects-section {
   padding: 50px 0;
@@ -877,7 +927,7 @@ body {
 
   .layout {
     flex-direction: column;
-    height: 100vh;
+    height: 70vh;
 
     .left-panel,
     .right-panel {
