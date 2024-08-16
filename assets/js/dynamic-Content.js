@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalImage.style.height = 'auto';
       } else {
         // Vertical image
-        modalImage.style.width = '100%';
+        modalImage.style.width = '60%';
         modalImage.style.height = 'auto';
         modalImage.padding = '0';
       }

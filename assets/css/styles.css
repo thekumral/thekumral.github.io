@@ -12428,6 +12428,7 @@ body {
 .experience-section .experience-right {
   width: 70%;
   padding-left: 1rem;
+  color: #f7f7f8;
 }
 
 .education-section {
@@ -12584,7 +12585,6 @@ body {
     width: 90%;
   }
   .experience-container .experience-item {
-    flex-direction: column;
     align-items: flex-start;
   }
   .experience-container .experience-item .date-company {
