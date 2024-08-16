@@ -1,0 +1,43 @@
+$primary-900: #0000cc;
+$primary-800: #031ddb;
+$primary-700: #182de6;
+$primary-600: #273af3;
+$primary-500: #2b44ff;
+$primary-400: #5464ff;
+$primary-300: #7883ff;
+$primary-200: #a2a6ff;
+$primary-100: #c9c9ff;
+$primary-50: #eaeaff;
+
+$primary: $primary-500;
+
+$hero-primary: darken(mix(#000000, $primary-700), 15%);
+
+$body-background-color: $primary-50;
+
+$terminalBackground: #0a1704;
+$terminalHeader: #000000;
+$terminalBorder: 1em;
+$terminalBar: #3d65d3;
+$terminalBarAccents: #f45bee;
+$terminalText: #0d339d;
+$terminalClose: #ff4746;
+$terminalCloseBorder: #b81717;
+$terminalMinimise: #ffbe00;
+$terminalMinimiseBorder: #aa7813;
+$terminalExpand: #00db47;
+$terminalExpandBorder: #0d791f;
+$terminalButtonSize: 0.75em;
+
+$gold: #c5c34a;
+
+$rainbowRed: #ff0000;
+$rainbowOrange: #ff7f00;
+$rainbowYellow: #ffff00;
+$rainbowGreen: #00ff00;
+$rainbowBlue: #0000ff;
+$rainbowViolet: #4b0082;
+
+@import url('http://fonts.cdnfonts.com/css/monaco');
+
+@import './../../node_modules/bulma/sass/utilities/initial-variables.scss';

@@ -12,21 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   projectCards.forEach((card) => {
     card.addEventListener('click', () => {
-      // Tıklanan karttan verileri al
       const projectTitle = card.querySelector('h3').innerText;
       const projectDescription = card.querySelector('p').innerText;
       const projectLink = card.querySelector('.github-link').href;
       const images = card.querySelectorAll('.image-gallery img');
 
-      // Verileri modala yerleştir
       modalTitle.innerText = projectTitle;
       modalDescription.innerText = projectDescription;
       modalLink.href = projectLink;
 
-      // Önceki resimleri temizle
       slider.innerHTML = '';
 
-      // Yeni resimleri slider'a ekle
       images.forEach((img, index) => {
         const imgClone = img.cloneNode();
         if (index === 0) {
@@ -35,20 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.appendChild(imgClone);
       });
 
-      // Resim yüksekliğine göre düzeni ayarla
       adjustImageOrientation();
-
-      // Modalı göster
       modal.style.display = 'flex';
     });
   });
 
-  // 'X' işaretine tıklanınca modalı kapat
   closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
   });
 
-  // Modal içeriği dışına tıklanınca modalı kapat
   window.addEventListener('click', (event) => {
     if (event.target === modal) {
       modal.style.display = 'none';
@@ -59,20 +50,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const img = slider.querySelector('img.active');
     const aspectRatio = img.naturalWidth / img.naturalHeight;
 
-    // Önceki düzenlemeleri sıfırla
+    // Reset styles
     modalBody.style.flexDirection = 'row';
-    modalImage.style.maxWidth = '50%';
+    modalImage.style.width = '50%';
     modalText.style.width = '50%';
+    modalImage.style.height = 'auto'; // Reset height
 
     if (aspectRatio > 1) {
-      // Yatay resim
-      modalBody.style.flexDirection = 'column'; // Metin ve resmi dikey olarak yerleştir
-      modalImage.style.maxHeight = '50vh'; // Yükseklik sınırlaması
-      modalImage.style.width = '100%'; // Genişlik sınırlaması
-      modalText.style.width = '100%'; // Metin genişliğini genişlet
+      // Horizontal image
+      modalImage.style.width = '70%';
+      modalImage.style.height = 'auto';
+      modalBody.style.flexDirection = 'column';
+      modalText.style.width = '100%';
+      modalText.style.fontSize = '0.9rem';
     } else {
-      // Dikey resimler için mevcut düzeni koru
-      modalImage.style.maxHeight = '100%'; // Yükseklik sınırlaması
+      // Vertical image
+      modalImage.style.width = '30%';
+      modalImage.style.height = 'auto';
     }
   }
 });
