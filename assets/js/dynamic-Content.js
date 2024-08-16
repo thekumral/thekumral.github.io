@@ -56,17 +56,37 @@ document.addEventListener('DOMContentLoaded', () => {
     modalText.style.width = '50%';
     modalImage.style.height = 'auto'; // Reset height
 
-    if (aspectRatio > 1) {
-      // Horizontal image
-      modalImage.style.width = '70%';
-      modalImage.style.height = 'auto';
+    if (window.innerWidth <= 768) {
+      // Mobile view adjustments
       modalBody.style.flexDirection = 'column';
+      modalImage.style.width = '100%';
       modalText.style.width = '100%';
-      modalText.style.fontSize = '0.9rem';
+      modalText.style.fontSize = '0.9rem'; // Adjust text size for mobile
+
+      if (aspectRatio > 1) {
+        // Horizontal image
+        modalImage.style.width = '100%';
+        modalImage.style.height = 'auto';
+      } else {
+        // Vertical image
+        modalImage.style.width = '100%';
+        modalImage.style.height = 'auto';
+        modalImage.padding = '0';
+      }
     } else {
-      // Vertical image
-      modalImage.style.width = '30%';
-      modalImage.style.height = 'auto';
+      // Desktop view adjustments
+      if (aspectRatio > 1) {
+        // Horizontal image
+        modalImage.style.width = '70%';
+        modalImage.style.height = 'auto';
+        modalBody.style.flexDirection = 'column';
+        modalText.style.width = '100%';
+        modalText.style.fontSize = '0.9rem';
+      } else {
+        // Vertical image
+        modalImage.style.width = '30%';
+        modalImage.style.height = 'auto';
+      }
     }
   }
 });

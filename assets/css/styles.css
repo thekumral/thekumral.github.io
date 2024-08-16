@@ -12362,8 +12362,14 @@ body {
   .modal .modal-body {
     flex-direction: column;
   }
+  .modal .modal-text {
+    width: 100%;
+    padding: 10px;
+  }
   .modal .modal-image {
     width: 100%;
+    height: auto;
+    margin-top: 10px;
   }
   .modal .slider {
     height: auto;
