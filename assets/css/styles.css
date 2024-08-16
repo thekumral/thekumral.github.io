@@ -12280,13 +12280,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 .modal .modal-body {
   display: flex;
-  flex-direction: column;
-  gap: 0; /* Remove any gaps between the text and image */
+  flex-direction: row; /* Align text and image side by side */
+  gap: 20px;
   height: 100%;
-  align-items: center; /* Center align both text and image */
+  align-items: center;
+  position: relative;
 }
 .modal .modal-text {
   width: 50%;
@@ -12294,60 +12296,55 @@ body {
   font-size: 1rem;
 }
 .modal .modal-image {
-  margin-top: 0; /* Remove any margin at the top of the image */
-  padding-top: 0; /* Remove any padding at the top of the image */
-  width: 100%; /* Ensure the image takes the full width */
-  max-height: 60vh; /* Adjust the max-height for better fit */
-  display: flex;
-  justify-content: center; /* Center image horizontally */
-  align-items: center;
-}
-.modal .modal-image img {
-  max-width: 100%;
+  width: 50%;
   height: auto;
-  border-radius: 10px;
-  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
-.modal .slider img {
-  margin-top: 0; /* Ensure the images are flush with the text */
+.modal .modal-image .slider {
   width: 100%;
   height: auto;
+  display: flex;
+  position: relative;
+}
+.modal .modal-image .slider img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
   object-fit: contain;
   display: none;
-  border-radius: 10px;
 }
-.modal .slider img.active {
+.modal .modal-image .slider img.active {
   display: block;
 }
-.modal .slider-controls {
-  text-align: center;
-  margin-top: 5px;
-}
-.modal .prev,
-.modal .next {
+.modal .modal-image .slider .prev,
+.modal .modal-image .slider .next {
   cursor: pointer;
-  display: inline-block;
-  padding: 5px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   font-weight: bold;
   font-size: 16px;
   user-select: none;
-  -webkit-user-select: none;
-  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
-  text-decoration: none;
+  padding: 10px;
+  z-index: 10;
+  transition: background-color 0.3s ease;
 }
-.modal .prev:hover,
-.modal .next:hover {
+.modal .modal-image .slider .prev:hover,
+.modal .modal-image .slider .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-.modal .github-link {
-  color: #007bff;
-  font-weight: bold;
-  text-decoration: none;
+.modal .modal-image .slider .prev {
+  left: 10px;
 }
-.modal .github-link:hover {
-  color: #0056b3;
+.modal .modal-image .slider .next {
+  right: 10px;
 }
 .modal .close {
   color: #cccccc;
@@ -12365,33 +12362,23 @@ body {
   .modal .modal-body {
     flex-direction: column;
   }
-  .modal .modal-image-container {
-    max-width: 100%;
-    flex: none;
-    height: auto;
-  }
-  .modal .modal-text {
-    max-width: 100%;
-    flex: none;
-    height: auto;
+  .modal .modal-image {
+    width: 100%;
   }
   .modal .slider {
-    max-height: 100%;
+    height: auto;
   }
   .modal .prev,
   .modal .next {
     font-size: 14px;
-    padding: 4px;
+    padding: 8px;
   }
 }
 @media (max-width: 480px) {
-  .modal .slider {
-    max-height: 80%;
-  }
   .modal .prev,
   .modal .next {
     font-size: 12px;
-    padding: 3px;
+    padding: 6px;
   }
 }
 
