@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Desktop view adjustments
       if (aspectRatio > 1) {
         // Horizontal image
-        modalImage.style.width = '70%';
+        modalImage.style.width = '60%';
         modalImage.style.height = 'auto';
         modalBody.style.flexDirection = 'column';
         modalText.style.width = '100%';
