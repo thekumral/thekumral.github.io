@@ -204,12 +204,14 @@ body {
 
       .btn-resume,
       .btn-contact {
-        display: inline-flex; /* Use inline-flex to align items */
-        align-items: center; /* Center items vertically */
+        display: inline-flex;
+        /*Useinline-flextoalignitems*/
+        align-items: center;
+        /*Centeritemsvertically*/
         padding: 10px 20px;
         margin-right: 10px;
         border-radius: 5px;
-        background-color: #007bff;
+        background-color: $coder-Color;
         color: white;
         text-decoration: none;
         font-weight: bold;
@@ -226,7 +228,7 @@ body {
       }
 
       .btn-contact {
-        background-color: #28a745;
+        background-color: $terminal-Bar-Backgorund-Color;
 
         &:hover {
           background-color: #218838;
