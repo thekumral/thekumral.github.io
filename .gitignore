@@ -1,8 +1,10 @@
 # Node modules directory
-node_modules/
-# Include Font Awesome in node_modules
-!node_modules/@fortawesome/
-!node_modules/@fortawesome/fontawesome-free/
+node_modules/@popperjs
+node_modules/bootstrap
+node_modules/bulma
+node_modules/jquery
+node_modules/nodemailer
+
 
 # Logs
 logs
@@ -54,6 +56,9 @@ _site-build/
 .vscode/
 *.sublime-project
 *.sublime-workspace
+
+# Ignore all by default (to be cautious)
+#*.*  # Bu satırı kaldırdık
 
 # Allow specific file types
 !*.html
