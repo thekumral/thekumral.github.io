@@ -26,16 +26,17 @@
               <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
+              <a class="nav-link" href="#skills">Skills</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#projects">Projects</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#experience">Works</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -56,6 +57,23 @@
                 data-words='[ " Software Engineer.", " Coder.", " Developer."]'
               ></span>
             </h1>
+            <!-- Buttons for Resume and Contact -->
+            <div class="custom-buttons">
+              <a
+                href="./assets/resume/ÖmerFarukKUMRALResume.pdf"
+                class="btn-resume"
+                download="OmerFarukKumral_Resume.pdf"
+              >
+                <i class="fas fa-download"></i>Get Resume</a
+              >
+              <a
+                class="btn btn-contact"
+                href="#contact"
+                onclick="scrollToContact()"
+              >
+                <i class="fas fa-address-book"> </i>Get Contact</a
+              >
+            </div>
           </div>
         </div>
         <div class="right-panel">
@@ -193,6 +211,7 @@
         </div>
       </section>
 
+      <!-- Education Section -->
       <section class="education-section">
         <h2 class="education-title">EDUCATION</h2>
         <div class="education-container">
@@ -203,6 +222,54 @@
             <p class="education-university">Celal Bayar University, Manisa</p>
             <p class="education-duration">2020 – 2024</p>
             <p class="education-gpa">GPA: 3.40/4.0</p>
+          </div>
+        </div>
+      </section>
+      <!-- Experience Section -->
+      <section id="experience" class="experience-section">
+        <div class="container">
+          <h2>Experience</h2>
+          <div class="experience-container">
+            <div class="experience-item">
+              <div class="experience-left">
+                <div class="line"></div>
+                <div class="position">
+                  <h3>Hadi Satalım Biz</h3>
+                  <p id="date">01/2024 – 06/2024</p>
+                  <p id="date">Online - Intern</p>
+                </div>
+              </div>
+              <div class="experience-right">
+                <p>
+                  I played an active role in developing a CRM system using
+                  layered architecture, including both back-end and front-end
+                  development processes. I also had the opportunity to enhance
+                  my skills by participating in Artificial Intelligence (AI) and
+                  Full Stack projects.
+                </p>
+              </div>
+            </div>
+            <div class="experience-item">
+              <div class="experience-left">
+                <div class="line"></div>
+                <div class="position">
+                  <h3>AKGÜN TEKNOLOJİ</h3>
+                  <p id="date">07/2023 – 08/2023</p>
+                  <p id="date">Trabzon - TEKNOPARK - Intern</p>
+                </div>
+              </div>
+              <div class="experience-right">
+                <p>
+                  I completed my summer internship in the Hospital Management
+                  Information Systems department at Akgün Company. I developed
+                  my skills in writing complex database queries using Oracle
+                  SQL, and in data manipulation and analysis through these
+                  queries. By creating detailed reports, I gained experience in
+                  developing database-driven solutions for hospital management
+                  processes.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -453,57 +520,8 @@
         </div>
       </section>
 
-      <!-- Experience Section -->
-      <section id="experience" class="experience-section">
-        <div class="container">
-          <h2>Experience</h2>
-          <div class="experience-container">
-            <div class="experience-item">
-              <div class="experience-left">
-                <div class="line"></div>
-                <div class="position">
-                  <h3>Hadi Satalım Biz</h3>
-                  <p id="date">01/2024 – 06/2024</p>
-                  <p id="date">Online - Intern</p>
-                </div>
-              </div>
-              <div class="experience-right">
-                <p>
-                  I played an active role in developing a CRM system using
-                  layered architecture, including both back-end and front-end
-                  development processes. I also had the opportunity to enhance
-                  my skills by participating in Artificial Intelligence (AI) and
-                  Full Stack projects.
-                </p>
-              </div>
-            </div>
-            <div class="experience-item">
-              <div class="experience-left">
-                <div class="line"></div>
-                <div class="position">
-                  <h3>AKGÜN TEKNOLOJİ</h3>
-                  <p id="date">07/2023 – 08/2023</p>
-                  <p id="date">Trabzon - TEKNOPARK - Intern</p>
-                </div>
-              </div>
-              <div class="experience-right">
-                <p>
-                  I completed my summer internship in the Hospital Management
-                  Information Systems department at Akgün Company. I developed
-                  my skills in writing complex database queries using Oracle
-                  SQL, and in data manipulation and analysis through these
-                  queries. By creating detailed reports, I gained experience in
-                  developing database-driven solutions for hospital management
-                  processes.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Contact Section -->
-      <section class="contact-section">
+      <section id="contact" class="contact-section">
         <div class="contact-container">
           <div class="form-section">
             <h2>Contact With Me</h2>
@@ -596,5 +614,6 @@
     <script src="./assets/js/animated-text.js"></script>
     <script src="./assets/js/dynamic-Content.js"></script>
     <script src="./assets/js/slider.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>

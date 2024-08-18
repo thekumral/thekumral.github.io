@@ -17,7 +17,7 @@ function showSlides() {
 // Initialize the slider
 function initSlider() {
   showSlides(); // Show the first slide
-  setInterval(showSlides, 5000); // Change slide every 5 seconds
+  setInterval(showSlides, 3000); // Change slide every 5 seconds
 
   document
     .querySelector('.prev')

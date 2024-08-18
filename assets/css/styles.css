@@ -11844,6 +11844,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #070f2b;
 }
@@ -11950,6 +11954,38 @@ body {
   font-weight: bold;
   animation: blink 0.7s steps(1) infinite;
   color: inherit;
+}
+.layout .left-panel .custom-buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+.layout .left-panel .custom-buttons .btn-resume,
+.layout .left-panel .custom-buttons .btn-contact {
+  display: inline-flex; /* Use inline-flex to align items */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.layout .left-panel .custom-buttons .btn-resume i,
+.layout .left-panel .custom-buttons .btn-contact i {
+  /* Style the icon */
+  margin-right: 8px; /* Space between icon and text */
+}
+.layout .left-panel .custom-buttons .btn-resume:hover,
+.layout .left-panel .custom-buttons .btn-contact:hover {
+  background-color: #0056b3;
+}
+.layout .left-panel .custom-buttons .btn-contact {
+  background-color: #28a745;
+}
+.layout .left-panel .custom-buttons .btn-contact:hover {
+  background-color: #218838;
 }
 .layout .right-panel {
   width: 65%;
