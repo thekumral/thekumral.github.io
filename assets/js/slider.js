@@ -17,25 +17,7 @@ function showSlides() {
 // Initialize the slider
 function initSlider() {
   showSlides(); // Show the first slide
-  setInterval(showSlides, 3000); // Change slide every 5 seconds
-
-  document
-    .querySelector('.prev')
-    .addEventListener('click', () => plusSlides(-1));
-  document
-    .querySelector('.next')
-    .addEventListener('click', () => plusSlides(1));
-}
-
-function plusSlides(n) {
-  slideIndex += n;
-  let slides = document.querySelectorAll('.slider img');
-  if (slides.length > 0) {
-    if (slideIndex > slides.length) slideIndex = 1;
-    if (slideIndex < 1) slideIndex = slides.length;
-    slides.forEach((slide) => (slide.style.display = 'none'));
-    slides[slideIndex - 1].style.display = 'block';
-  }
+  setInterval(showSlides, 3000); // Change slide every 3 seconds
 }
 
 // Attach event listeners once the DOM is fully loaded

@@ -11931,16 +11931,24 @@ body {
   width: 35%;
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* İçeriği ortalar */
+  text-align: center; /* Tüm metni ortalar */
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 }
 .layout .left-panel .animation_text h1, .layout .left-panel .animation_text .h1 {
   font-family: "Poppins", sans-serif;
-  text-align: center;
   color: #f7f7f8;
   font-size: 30px;
   font-weight: 500;
+  margin: 0; /* Varsayılan marginleri kaldırır */
+  line-height: 1.2; /* Satır yüksekliğini ayarlar */
+}
+.layout .left-panel .hello-text {
+  display: block;
+  text-align: left;
+  margin-bottom: -35px;
 }
 .layout .left-panel .animation_text h1 span, .layout .left-panel .animation_text .h1 span {
   color: #a02334;
@@ -11961,10 +11969,8 @@ body {
 }
 .layout .left-panel .custom-buttons .btn-resume,
 .layout .left-panel .custom-buttons .btn-contact {
-  display: inline-flex;
-  /*Useinline-flextoalignitems*/
-  align-items: center;
-  /*Centeritemsvertically*/
+  display: inline-flex; /* Inline-flex ile hizalama */
+  align-items: center; /* Yükseklik hizalaması */
   padding: 10px 20px;
   margin-right: 10px;
   border-radius: 5px;
@@ -11976,8 +11982,7 @@ body {
 }
 .layout .left-panel .custom-buttons .btn-resume i,
 .layout .left-panel .custom-buttons .btn-contact i {
-  /* Style the icon */
-  margin-right: 8px; /* Space between icon and text */
+  margin-right: 8px; /* İkon ile metin arasındaki boşluk */
 }
 .layout .left-panel .custom-buttons .btn-resume:hover,
 .layout .left-panel .custom-buttons .btn-contact:hover {
@@ -12785,6 +12790,9 @@ body {
   }
 }
 @media (max-width: 575.98px) {
+  .animation_text {
+    font-size: 0.9rem;
+  }
   .skills-section .skills-container {
     flex-direction: row;
     flex-wrap: wrap;
