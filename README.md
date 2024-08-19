@@ -20,6 +20,7 @@ Welcome to my portfolio! This project showcases my skills and experiences in sof
     
   </tr>
 </table>
+
 ## Project Overview
 
 This portfolio is built using GitHub Pages, and it highlights my journey as a Software Engineer, with sections detailing my education, skills, projects, and contact information. The website is responsive and designed to provide an engaging user experience across various devices.
