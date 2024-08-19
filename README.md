@@ -6,10 +6,15 @@ Welcome to my portfolio! This project showcases my skills and experiences in sof
 <table>
   <tr>
     <td><img src="./assets/screenshots/first.png" alt="Giriş Ekranı" width="100%"/></td>
+    </tr> <tr>
     <td><img src="./assets/screenshots/first.png" alt="Kayıt Ekranı" width="100%"/></td>
+      </tr>  <tr>
     <td><img src="./assets/screenshots/first.png" alt="Ana Sayfa" width="100%"/></td>
+     <tr>
+          <td><img src="./assets/screenshots/first.png" alt="Ana Sayfa" width="100%"/></td>
+     </tr><tr>
     <td><img src="./assets/screenshots/first.png" alt="Ana Sayfa" width="100%"/></td>
-    <td><img src="./assets/screenshots/first.png" alt="Ana Sayfa" width="100%"/></td>
+     </tr><tr> 
     <td><img src="./assets/screenshots/first.png" alt="Ana Sayfa" width="100%"/></td>
   
     
