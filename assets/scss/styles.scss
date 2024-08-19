@@ -523,8 +523,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px; // Add padding to prevent squeezing
-    max-width: 500px; // Max width for text container
+    padding: 20px;
+    max-width: 700px;
 
     h2 {
       font-size: 2rem;
@@ -1148,7 +1148,7 @@ body {
       max-width: 100px;
     }
     .about-text {
-      max-width: 100%;
+      max-width: 500px;
     }
   }
   .projects-section,
